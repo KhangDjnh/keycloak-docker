@@ -1,8 +1,8 @@
-FROM quay.io/keycloak/keycloak:25.0.6-legacy
+FROM quay.io/keycloak/keycloak:25.0.6
 
 USER root
 
-# Cài font với dnf
+# Cài font
 RUN dnf install -y fontconfig freetype && dnf clean all
 
 USER 1000
