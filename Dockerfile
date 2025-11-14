@@ -1,7 +1,10 @@
-FROM quay.io/keycloak/keycloak:25.0.6
+FROM quay.io/keycloak/keycloak:25.0.6-legacy
 
 USER root
-RUN microdnf install -y fontconfig freetype && microdnf clean all
+
+# Cài font với dnf
+RUN dnf install -y fontconfig freetype && dnf clean all
+
 USER 1000
 
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
